@@ -1,0 +1,53 @@
+Problem Statement: Attendance Tracker Using Face Recognition
+For the Attendance Tracker System using Face Recognition, the use case diagram helps to represent the key functionalities (use cases) that the system will offer and how external entities (actors) will interact with those functionalities. The diagram captures the various interactions between the system and its users, and clarifies the system’s boundaries and responsibilities.
+
+Key Actors:
+Admin (Primary Actor):
+
+Responsible for managing the system (e.g., adding students, viewing reports, configuring the system, and overseeing the attendance logs).
+Interacts with the system for operational tasks.
+Student (Primary Actor):
+
+Interacts with the system to mark attendance via face recognition.
+Their facial data is used for identification and attendance tracking.
+Face Recognition System (Supporting Actor):
+
+A system that processes facial data, detects faces, and provides the recognition functionality.
+Supports attendance functionality by identifying the students and confirming their attendance.
+Database (Supporting Actor):
+
+Stores student data, attendance records, and logs.
+Handles the retrieval and update of attendance records.
+Use Cases:
+Student Registration:
+
+Allows the admin to register a new student in the system by adding their name and uploading facial data.
+Mark Attendance:
+
+Students can mark their attendance through face recognition.
+The system identifies the student by comparing the captured image with the stored database and marks the attendance.
+View Attendance Report:
+
+The admin can view reports of student attendance for a specific period (daily, weekly, monthly).
+Displays detailed logs and statistics.
+Configure System Settings:
+
+Admin configures settings related to the face recognition system (e.g., sensitivity, registration criteria, and other system preferences).
+Face Recognition:
+
+The face recognition system captures the student's image and matches it with stored facial data.
+If a match is found, attendance is marked for that student.
+Attendance Confirmation:
+
+After successful face recognition, the system provides a confirmation message to the student and the admin.
+Relationships Between Use Cases:
+Include Relationships:
+
+Face Recognition is included in Mark Attendance as it is the core function required to verify the student’s presence.
+View Attendance Report may include Fetch Attendance Data from the database.
+Extend Relationships:
+
+Attendance Confirmation could extend Mark Attendance in case of success, with a message for the student and admin.
+Generalization Relationships:
+
+There is no specific generalization relationship in this case, as the system revolves around specific actors (Admin, Student) and actions like registration, marking attendance, etc.
