@@ -1,0 +1,99 @@
+### **Modeling UML Use Case Diagrams and Capturing Use Case Scenarios for Attendance Tracking System Using Face Recognition**  
+
+### **Objectives**  
+After completing this experiment, you will be able to:  
+- Identify different **actors** and **use cases** for an **Attendance Tracking System using Face Recognition**.  
+- Understand the **relationships** between different use cases.  
+- Draw a **Use Case Diagram** for the system.  
+
+### **Theory**  
+
+#### **Use Case Diagrams**  
+Use case diagrams are a part of **behavioral diagrams** in UML and provide a **graphical overview** of the functionality of a system. It consists of:  
+- **Use cases** (functionalities provided by the system).  
+- **Actors** (entities interacting with the system).  
+- **Relationships** (interactions between actors and use cases).  
+
+---
+
+### **Key Components of the Attendance Tracking System**  
+
+#### **1. Actor Identification**  
+An **actor** represents any **external entity** that interacts with the system to perform certain tasks.  
+
+- **Primary Actor:**  
+  - **Student:** Marks attendance using face recognition.  
+  - **Teacher/Admin:** Views and manages attendance records.  
+
+- **Supporting Actor:**  
+  - **Database System:** Stores attendance records and retrieves data.  
+
+---
+
+#### **2. Use Cases**  
+A **use case** represents the different functionalities that the system provides.  
+
+- **Face Recognition Attendance**: System captures and verifies a student's face.  
+- **Mark Attendance**: If the face matches, attendance is marked.  
+- **View Attendance Records**: Teacher/Admin checks attendance logs.  
+- **Generate Reports**: Attendance reports are generated based on stored records.  
+- **Admin Login**: Only authorized admins can access and modify attendance records.  
+
+---
+
+#### **3. Subject (System Under Consideration)**  
+The **Attendance Tracking System** using face recognition is the **subject**, which includes multiple use cases and interacts with various actors.  
+
+---
+
+### **Use Case Relationships**  
+
+#### **1. Include Relationship**  
+Used when a functionality is **common** across multiple use cases.  
+
+**Example:**  
+- **Face Recognition** is a **common** functionality that is required for marking attendance.  
+- **Login** is required before any teacher/admin can access reports.  
+
+#### **2. Extend Relationship**  
+Used when a use case **extends** another use case based on certain conditions.  
+
+**Example:**  
+- **Generate Reports** can be extended to include **custom date-wise or subject-wise filtering**.  
+- **Mark Attendance** can be extended to handle **manual attendance marking** in case of system failure.  
+
+#### **3. Generalization Relationship**  
+Used when a **use case specializes** another use case.  
+
+**Example:**  
+- **Admin Login** is a specialized case of a **User Login**, where admins have more privileges.  
+
+---
+
+### **Graphical Representation**  
+
+#### **Use Case Diagram for Attendance Tracking System**  
+- **Actors:** Student, Teacher/Admin, Database  
+- **Use Cases:** Face Recognition, Mark Attendance, View Attendance, Generate Reports, Login  
+- **Relationships:** Include, Extend, Generalization  
+
+---
+### **Steps to Identify Use Cases and Actors**  
+
+1. **Identify Actors**  
+   - Who will interact with the system? (Students, Teachers, Admins, Database)  
+2. **Identify Use Cases**  
+   - What functionalities will the actors perform? (Mark Attendance, View Reports, etc.)  
+3. **Draw Use Case Diagram**  
+   - Represent actors using **stick figures**.  
+   - Represent use cases using **ellipses** inside a system boundary.  
+   - Connect actors to use cases using **association lines**.  
+
+---
+### **Guidelines for Drawing Use Case Diagrams**  
+- Clearly define **system boundaries**.  
+- Ensure **each actor has a meaningful purpose**.  
+- Associate **actors with relevant use cases**.  
+- Use **Include and Extend** relationships where necessary.  
+
+By following this structured approach, we can develop a well-organized **Use Case Diagram** for the **Attendance Tracking System using Face Recognition**.
