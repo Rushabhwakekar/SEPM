@@ -1,0 +1,105 @@
+### Statechart and Activity Modeling for the **Face Recognition Attendance Tracker**
+
+Let's apply **Statechart and Activity Modeling** concepts to the **Face Recognition Attendance Tracker**. Below, we'll go over how to represent the system's behavior and flow of control using statechart diagrams and activity diagrams, identifying the distinct states, events causing transitions, and the basic activities involved.
+
+### **Statechart Diagram for the Face Recognition Attendance Tracker**
+
+#### 1. **Identifying Distinct States**
+We first identify the distinct states the system passes through during its operation. These states will be represented in the statechart diagram.
+
+Here are some potential states for the **Face Recognition Attendance Tracker**:
+
+- **Idle**: The system is waiting for a user to start the process.
+- **Capturing Image**: The camera is capturing a face image for recognition.
+- **Recognizing Face**: The system processes the captured image to recognize a face.
+- **Face Recognized**: The system successfully recognizes the user’s face.
+- **Logging Attendance**: The system logs the attendance after recognizing the face.
+- **Face Not Recognized**: The system fails to recognize the user’s face.
+- **Error**: There is an issue, like a failed system or hardware malfunction.
+- **Shutdown**: The system is turned off or in idle mode after completing its task.
+
+#### 2. **Events Causing Transitions**
+Next, we identify the events that trigger transitions from one state to another.
+
+- **Event: Start Button Pressed** → Causes the system to move from **Idle** to **Capturing Image**.
+- **Event: Image Captured** → Triggers the transition from **Capturing Image** to **Recognizing Face**.
+- **Event: Face Recognized** → Moves the system from **Recognizing Face** to **Face Recognized** and then to **Logging Attendance**.
+- **Event: Face Not Recognized** → Transitions from **Recognizing Face** to **Face Not Recognized**.
+- **Event: Attendance Logged** → Moves from **Logging Attendance** to **Idle** or **Shutdown**.
+- **Event: Error Occurred** → Causes a transition from any state to **Error**.
+- **Event: Power Off** → Transitions from **Idle** or **Error** to **Shutdown**.
+
+#### 3. **Building the Statechart Diagram**
+Here’s how the **Statechart Diagram** for the **Face Recognition Attendance Tracker** might look:
+
+```
+[Initial] --> Idle
+Idle --> Capturing Image : Start Button Pressed
+Capturing Image --> Recognizing Face : Image Captured
+Recognizing Face --> Face Recognized : Face Recognized
+Recognizing Face --> Face Not Recognized : Face Not Recognized
+Face Recognized --> Logging Attendance : Attendance Logged
+Logging Attendance --> Idle : Attendance Logged
+Face Not Recognized --> Idle : Retry
+Error --> Idle : Power Off / Restart
+Idle --> Shutdown : Power Off
+Shutdown --> [Final]
+```
+
+In this diagram:
+- **Idle** is the starting point.
+- **Shutdown** is the final state.
+- Transitions between states are triggered by specific events.
+
+### **Activity Diagram for the Face Recognition Attendance Tracker**
+
+#### 1. **Identifying Activities**
+The **activities** represent the work performed in the system. The primary activities in this case would include:
+
+- **Start Attendance Process**: The process begins when the user activates the system.
+- **Capture Image**: The system uses the camera to capture the face image.
+- **Recognize Face**: The system attempts to match the captured face with the database.
+- **Log Attendance**: After recognizing the face, attendance is logged in the system.
+- **Retry Face Recognition**: If the face is not recognized, the system prompts the user to retry.
+- **Handle Error**: If an error occurs (e.g., camera failure), the system handles it appropriately.
+
+#### 2. **Defining Control Flow**
+The flow of control for the attendance tracking process is as follows:
+
+1. **Initial Node**: The process starts when the user presses the start button.
+2. **Capture Image**: The camera captures the face image.
+3. **Decision Node**: After the image is captured, the system decides if the face is recognized.
+   - **If Face Recognized**: Proceed to **Log Attendance**.
+   - **If Face Not Recognized**: Prompt user to **Retry Face Recognition**.
+4. **Log Attendance**: If the face is recognized, attendance is logged.
+5. **Final Node**: After logging attendance, the process either ends or returns to **Idle**.
+
+#### 3. **Building the Activity Diagram**
+Here’s how the **Activity Diagram** for the **Face Recognition Attendance Tracker** might look:
+
+```
+[Initial] --> Start Attendance Process
+Start Attendance Process --> Capture Image
+Capture Image --> Recognize Face
+Recognize Face --> [Decision] : Is face recognized?
+  - Yes --> Log Attendance --> [Final]
+  - No  --> Retry Face Recognition --> Recognize Face
+```
+
+- **Start Attendance Process** is the first activity.
+- **Capture Image** follows when the system captures the face.
+- **Recognize Face** then checks whether the face is recognized.
+- **Log Attendance** occurs if recognition is successful.
+- If not, the system allows retrying the face recognition.
+
+### **Key Components of Activity Diagram**:
+- **Initial Node**: The start of the process.
+- **Final Node**: Marks the completion of the process (e.g., logging attendance or retrying).
+- **Decision Node**: Decides whether the face was recognized or not.
+- **Guard Conditions**: The condition that must be true for a transition to occur, such as "Face Recognized".
+
+### **Conclusion**
+- **Statechart Diagram**: Helps in modeling the various states the **Face Recognition Attendance Tracker** system will go through, and the events that cause transitions between these states.
+- **Activity Diagram**: Represents the flow of activities involved in the system’s functioning, helping to visualize the sequence of tasks and decision points.
+
+Both diagrams are crucial in **Object-Oriented Design** to understand the dynamic behavior and control flow of the system, ensuring a clear and structured design.
