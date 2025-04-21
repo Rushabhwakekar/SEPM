@@ -1,0 +1,131 @@
+### Designing Test Suites
+
+**Objectives:**
+After completing this experiment, you will be able to:
+- Understand different techniques for testing software.
+- Design unit test cases to verify functionality and locate bugs.
+
+---
+
+### **Theory:**
+
+#### **Software Testing**
+
+Software testing is an essential part of the software development life cycle. It is crucial for identifying defects or bugs in a system and ensuring its reliability and correctness. Testing helps validate and verify the software product, ensuring that it performs as expected and meets user requirements.
+
+**Verification vs. Validation:**
+- **Verification**: This process checks whether the software meets the pre-specified requirements. It ensures consistency and correctness.
+- **Validation**: This process ensures that the software meets the user's needs and expectations, confirming that the correct system has been built.
+
+#### **Defect:**
+A defect is a variance between the expected and actual results. It can be traced back to a fault introduced during the specification, design, or development phase.
+
+---
+
+### **Standards for Software Test Documentation:**
+The following IEEE standards provide guidelines for various software testing phases:
+- **IEEE 829-1998**: Standard for Software Test Documentation.
+- **IEEE 1008**: Standard for Unit Testing.
+- **IEEE 1012**: Standard for Software Verification and Validation.
+- **IEEE 1044**: Standard for Software Anomalies Classification.
+
+---
+
+### **Testing Frameworks:**
+Testing frameworks help automate and manage testing activities. Some widely used frameworks are:
+- **JUnit**: For unit testing in Java.
+- **Selenium**: For automating web applications.
+- **HP QC**: Test management tool for defining releases, specifying requirements, and tracking defects.
+- **IBM Rational**: A suite for designing, implementing, and testing software.
+
+---
+
+### **Need for Software Testing:**
+Software testing ensures the quality of software by identifying defects, improving reliability, and meeting industry standards. Some reasons for software testing include:
+- **Fault identification**: Helps find and eliminate defects, reducing system failures.
+- **Compliance**: Meets legal, regulatory, and industry-specific requirements.
+- **Improved software quality**: Enhances reliability, maintainability, and usability.
+
+---
+
+### **Test Cases and Test Suite:**
+- **Test Case**: A test case consists of input descriptions, expected outputs, and conditions for execution. It is a specific condition used to validate a functionality of the software.
+- **Test Suite**: A collection of all possible test cases for a given software component or system.
+
+---
+
+### **Types of Software Testing:**
+1. **Unit Testing**: Testing the smallest units of a program, such as individual functions or methods.
+2. **Integration Testing**: Testing the interaction between different software components or systems.
+3. **System Testing**: Testing the entire software system to ensure it meets all functional and non-functional requirements.
+4. **Regression Testing**: Ensuring that changes to the code (e.g., bug fixes or new features) have not introduced new errors.
+
+---
+
+### **Unit Testing:**
+
+**Unit Testing** focuses on testing individual units or components of a program in isolation.
+
+**Types of Unit Testing:**
+1. **Black Box Testing**: Tests are designed based solely on input and output values, without considering the internal workings of the software. 
+   - **Equivalence Class Partitioning**: Divides input into equivalence classes where each class is assumed to produce the same result.
+   - **Boundary Value Analysis**: Tests the boundaries of input values to identify edge cases.
+   
+2. **White Box Testing**: Tests are designed based on the internal structure of the software, focusing on the flow of data and control.
+   - **Code Coverage**: Ensures that all lines of code are executed during testing.
+   - **Data Flow Testing**: Focuses on testing how data flows through the software and whether the flow meets the intended design.
+
+---
+
+### **Integration Testing:**
+
+When two or more tested units are combined, integration testing ensures that they interact correctly. There are two main approaches:
+- **Top-Down Approach**: Testing starts with the main routine, adding subordinate routines incrementally.
+- **Bottom-Up Approach**: Testing starts with lower-level components and integrates them gradually.
+
+---
+
+### **System Testing:**
+
+System testing focuses on testing the complete software system in an end-to-end manner. It involves:
+- **Alpha Testing**: Performed by developers or the testing team in a controlled environment.
+- **Beta Testing**: Conducted by a limited number of users in real-world environments before release.
+- **User Acceptance Testing**: Ensures the software meets the user’s needs and requirements.
+
+---
+
+### **Example:**
+
+**Problem:**
+Write a program to calculate the square of a number within the range of 1 to 100.
+
+**Test Cases:**
+
+| **Input** | **Output**                 |
+|-----------|----------------------------|
+| I1: -2    | O1: Beyond the range        |
+| I2: 0     | O2: Beyond the range        |
+| I3: 1     | O3: Square of 1 is 1        |
+| I4: 100   | O4: Square of 100 is 10000  |
+| I5: 101   | O5: Beyond the range        |
+| I6: 4     | O6: Square of 4 is 16       |
+| I7: 62    | O7: Square of 62 is 3844    |
+
+**Test Cases:**
+- **T1**: {I1, O1}
+- **T2**: {I2, O2}
+- **T3**: {I3, O3}
+- **T4**: {I4, O4}
+- **T5**: {I5, O5}
+- **T6**: {I6, O6}
+- **T7**: {I7, O7}
+
+---
+
+### **Some Remarks:**
+Testing should not be a phase done after coding; rather, it should be a continuous process throughout the software development life cycle. Test cases should be prepared from the Software Requirements Specification (SRS) document, which outlines all expected features. While testing helps ensure correctness, it also identifies and addresses bugs, improving the overall software quality.
+
+---
+
+### **Conclusion:**
+Testing is an integral part of software development, ensuring that the software is reliable, efficient, and meets user expectations. By designing test suites and applying various testing methods (such as unit, integration, and system testing), developers can catch defects early in the development cycle, saving time and resources in the long run.
